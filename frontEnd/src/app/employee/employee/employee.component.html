@@ -1,0 +1,40 @@
+<div class="container-fluid" style="position: absolute; left: 100px;">
+	<div class ="row">
+        <div class="col-sm-9" style="background-color:  #b3ecff; margin-top: 50px; border-radius: 15px; text-align: center; max-width: fit-content;"><h5>List of Employees</h5>
+	<img style="position: absolute;left: 20px; top: 8px" src="assets/img_avatar.png" width="40" height="40" alt="MOOL">
+	<img style="position: absolute;left: 65px; top: 8px" src="assets/img_avatar2.png" width="40" height="40" alt="MOOL">
+	<img style="position: absolute;left: 110px; top: 8px" src="assets/avatar2.png" width="40" height="40" alt="MOOL">
+	<img style="position: absolute;left: 155px; top: 8px" src="assets/avatar6.png" width="40" height="40" alt="MOOL">
+	<img style="position: absolute;left: 200px; top: 8px" src="assets/avatar5.png" width="40" height="40" alt="MOOL">
+<div class="table">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Name</th>
+			<th scope="col">Age</th>
+			<th scope="col">Gender</th>
+			<th scope="col">Address</th>
+			<th scope="col">Email</th>
+			<th scope="col">Salary</th>
+			<th scope="col">Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let emp of employees; let i = index">
+			<td>{{ i + 1 }}</td>
+			<td>{{ emp.name }}</td>
+			<td>{{ emp.age }}</td>
+			<td>{{ emp.gender }}</td>
+			<td>{{ emp.address }}</td>
+			<td>{{ emp.email }}</td>
+			<td>{{ emp.salary }}</td>
+			<td>
+				<button class="btn btn-primary btn-sm mx-auto" routerLink="edit/{{ emp._id }}">Edit</button>
+				<button class="btn btn-danger btn-sm mx-auto" (click)="deleteData(emp._id)">Delete</button>
+			</td>
+		</tr>
+	</tbody>
+</div>
+</div>
+</div>
+</div>

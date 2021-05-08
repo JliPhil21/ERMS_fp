@@ -1,0 +1,38 @@
+<div id="signin" class="container tab-pane active" style="position: absolute; left: 130px;" >
+    <div class="container">
+      <div class ="row">
+        <div class="col-sm-4" style="background-color:  #b3ecff; margin-top: 50px; border-radius: 15px; text-align: center;"><br>
+          <img src="assets/signup.png" width="40" height="40" alt="MOOL">Sign-up
+          <br><br>
+          <form (ngSubmit)="insertuData()" [formGroup]="form" style="text-align: left">
+            <div class="form-group">
+              <input type="text" formControlName="username" [ngClass]="{ 'is-invalid':submitted && f.username.errors }" class="form-control" placeholder="Enter Username">
+        
+              <div *ngIf="submitted && f.username.errors" class="invalid-feedback"
+              >
+                <div *ngIf="f.username.errors.required"> Username is required</div>
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="text" formControlName="password" [ngClass]="{ 'is-invalid':submitted && f.password.errors }" class="form-control" placeholder="Enter Password">
+        
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback"
+              >
+                <div *ngIf="f.password.errors.required"> Password is required</div>
+              </div>
+            </div>
+        
+              <div class="form text-center">
+                <hr style="color: black;">
+              <button class="btn btn-primary btn-sm mt-4" style="font-weight: bold; height: 40px; width: 55%">Submit</button><br>
+              <hr style="color: black;">
+              <a href="/signin">Already have an account?</a>
+              <br>
+              <br>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 

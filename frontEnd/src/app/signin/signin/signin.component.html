@@ -1,0 +1,28 @@
+<div id="login" class="container-fluid tab-pane active" style="position: absolute; left: 130px;" >
+    <div class="container">
+      <div class ="row">
+        <div class="col-sm-4" style="background-color:  #b3ecff; margin-top: 50px; border-radius: 15px; text-align: center;"><br>
+          <img style="margin-top: 3px;" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/login-96-520701.png" width="40" height="40" alt="MOOL">Log-in
+          <br><br>
+          <form action="/signin" class="text-center" [formGroup]="form" (ngSubmit)="signinProcess()">
+            <div class="form-group">
+                <input type="username" class="form-control" id="username" placeholder="Enter username"  [ngClass]="{ 'is-invalid':submitted && f.username.errors }" required name="username"  formControlName="username"><br>
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                  <div *ngIf="f.username.errors.required"> Username is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" placeholder="Enter password"  [ngClass]="{ 'is-invalid':submitted && f.username.errors }"  required name="password" formControlName="password"><br>
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                  <div *ngIf="f.password.errors.required"> Password is required</div>
+                </div>
+            </div>
+              <button type="submit" class="btnli btn btn-primary btn-block btn-sm nav-link" style="font-weight: bold; height: 40px; width: 55%; margin: 0 auto" routerLink="/" >Log in</button>
+              <hr>
+              <button type="cancel" class="btncna btn btn-success btn-block btn-sm" style="font-weight: bold; width: 55%; margin: 0 auto; height: 40px" routerLink="/signup" >Create New Account</button><br>
+            <br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

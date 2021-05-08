@@ -1,0 +1,29 @@
+<div id="signin" class="container tab-pane active" style="position: absolute; left: 130px;" >
+    <div class="container-fluid">
+	
+      <div class ="row">
+        <div class="col-sm-4" style="background-color:  #b3ecff; margin-top: 50px; border-radius: 15px; text-align: center; max-width: fit-content;">
+<div class="table">
+	<img src="assets/users.png" width="60" height="60" alt="MOOL">Users
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Username</th>
+			<th scope="col">Password</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let usr of users; let i = index">
+			<td>{{ i + 1 }}</td>
+			<td>{{ usr.username }}</td>
+			<td>{{ usr.password }}</td>
+			<td>
+				<button class="btn btn-danger btn-sm mx-auto" (click)="deleteuData(usr._id)">Delete</button>
+			</td>
+		</tr>
+	</tbody>
+</div>
+</div>
+</div>
+</div>
+</div>
